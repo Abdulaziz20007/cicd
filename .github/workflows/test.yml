@@ -21,3 +21,11 @@ jobs:
         env:
           PORT: ${{secrets.PORT}}
         run: npm run test
+  my:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install
+        run: sudo apt update && sudo apt install -y npm
+      - run: npm install --global fast-cli
+      - name: run
+        run: fast --upload
