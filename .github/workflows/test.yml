@@ -2,7 +2,7 @@ name: Check
 on: push
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         varsions: [18, 20, 22]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,9 +28,9 @@ jobs:
         env:
           PORT: ${{secrets.PORT}}
         run: npm run test
-  my:
-    runs-on: ubuntu-latest
-    steps:
-      - name: shutdown
-        run: sudo shutdown -h now
-      - run: node -v
+  # my:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: shutdown
+  #       run: sudo shutdown -h now
+  #     - run: node -v
