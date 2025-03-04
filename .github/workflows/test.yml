@@ -12,3 +12,5 @@ jobs:
         run: npm run lint
       - name: Test
         run: curl "api.myip.com"
+      - name: start
+        run: npm run start:dev
