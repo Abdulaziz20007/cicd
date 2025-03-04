@@ -12,7 +12,5 @@ jobs:
         run: npm run lint
       - name: Test
         run: curl "api.myip.com"
-      - name: install net-tools
-        run: sudo apt install net-tools
       - name: scan
-        run: arp -a
+        run: ip neigh show
